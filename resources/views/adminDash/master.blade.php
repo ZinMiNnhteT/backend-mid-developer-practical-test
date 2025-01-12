@@ -4,7 +4,7 @@
     <div class="container-fluid">
 
 
-        {{-- @include('adminDash.body') --}}
+        {{-- @include('adminDash.body')      --}}
         @yield('content')
 
         @include('adminDash.right-side-bar')

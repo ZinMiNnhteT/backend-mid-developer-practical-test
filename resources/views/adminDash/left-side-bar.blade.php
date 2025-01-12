@@ -14,9 +14,12 @@
                 <li> <a class="" href="javascript:void(0)" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard</span></a>
                 </li>
 
-                <li><a href="{{url('admin/users')}}">User <i class="ti-user"></i></a></li>
-                <li><a href="{{url('admin/permissions')}}">Permissions <i class="ti-comment"></i></a></li>
-                <li><a href="{{url('admin/roles')}}">Roles<i class="ti-support"></i></a></li>
+                <li><a href="{{route('users.index')}}">User <i class="ti-user"></i></a></li>
+
+                <li><a href="{{route('permissions.index')}}">Permissions <i class="ti-comment"></i></a></li>
+
+                <li><a href="{{route('roles.index')}}">Roles<i class="ti-support"></i></a></li>
+
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

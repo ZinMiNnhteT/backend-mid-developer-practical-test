@@ -1,5 +1,5 @@
 <footer class="footer">
-    © 2018 Elegent Admin by wrappixel.com
+    © 2025 Backend Mid Laravel Developer Pratical Test
 </footer>
 </div>
 
