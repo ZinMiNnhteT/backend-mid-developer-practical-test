@@ -96,3 +96,23 @@ Run the following command to seed the database with user roles and permissions:
 
 ```bash
 php artisan db:seed --class="UserRolePermissionSeeder"
+
+## Storage Links
+
+php artisan storage:link
+
+## Next, create two folders inside the storage/app/public/ directory for logos and profiles:
+```bash
+mkdir storage/app/public/logos
+mkdir storage/app/public/profiles
+
+
+## Prerequisites
+Ensure you have the following installed on your system:
+
+PHP 8.1 or higher
+Composer
+Node.js and npm
+MySQL or any preferred database
+
+
