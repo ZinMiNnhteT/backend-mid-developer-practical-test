@@ -14,13 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -31,16 +29,25 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::group(['middleware' => ['role:super-admin|admin']], function() {
-
     Route::resource('permissions', App\Http\Controllers\PermissionController::class);
-    Route::get('permissions/{permissionId}/delete', [App\Http\Controllers\PermissionController::class, 'destroy']);
+    Route::get('permissions/{permissionId}/delete', [App\Http\Controllers\PermissionController::class, 'destroy'])->name('permissions.delete');
 
     Route::resource('roles', App\Http\Controllers\RoleController::class);
-    Route::get('roles/{roleId}/delete', [App\Http\Controllers\RoleController::class, 'destroy']);
-    Route::get('roles/{roleId}/give-permissions', [App\Http\Controllers\RoleController::class, 'addPermissionToRole']);
-    Route::put('roles/{roleId}/give-permissions', [App\Http\Controllers\RoleController::class, 'givePermissionToRole']);
+    Route::get('roles/{roleId}/delete', [App\Http\Controllers\RoleController::class, 'destroy'])->name('roles.delete');
+
+    Route::get('roles/{roleId}/give-permissions', [App\Http\Controllers\RoleController::class, 'addPermissionToRole'])->name('roles.permissions.add');
+    Route::put('roles/{roleId}/give-permissions', [App\Http\Controllers\RoleController::class, 'givePermissionToRole'])->name('roles.permissions.give');
 
     Route::resource('users', App\Http\Controllers\UserController::class);
-    Route::get('users/{userId}/delete', [App\Http\Controllers\UserController::class, 'destroy']);
+    Route::get('users/{userId}/delete', [App\Http\Controllers\UserController::class, 'destroy'])->name('users.delete');
+
+    //Company route
+    Route::resource('companies', App\Http\Controllers\CompanyController::class);
+    Route::get('companies/{companyId}/delete', [App\Http\Controllers\CompanyController::class, 'destroy'])->name('companies.delete');
+
+    //Employee route
+    Route::resource('employees', App\Http\Controllers\EmployeeController::class);
+    Route::get('employees/{employeeId}/delete', [App\Http\Controllers\EmployeeController::class, 'destroy'])->name('employees.delete');
+
 
 });

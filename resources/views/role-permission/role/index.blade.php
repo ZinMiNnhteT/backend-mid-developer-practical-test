@@ -54,18 +54,18 @@
                 <td>{{ $role->id }}</td>
                 <td>{{ $role->name }}</td>
                 <td>
-                    <a href="{{ url('admin/roles/'.$role->id.'/give-permissions') }}" class="btn btn-warning">
+                    <a href="{{ route('roles.permissions.add', $role->id) }}" class="btn btn-warning">
                         Add / Edit Role Permission
                     </a>
 
                     @can('update role')
-                    <a href="{{ url('admin/roles/'.$role->id.'/edit') }}" class="btn btn-success">
+                    <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-success">
                         Edit
                     </a>
                     @endcan
 
                     @can('delete role')
-                    <a href="{{ url('admin/roles/'.$role->id.'/delete') }}" class="btn btn-danger mx-2">
+                    <a href="{{ route('roles.delete', $role->id) }}" class="btn btn-danger mx-2">
                         Delete
                     </a>
                     @endcan

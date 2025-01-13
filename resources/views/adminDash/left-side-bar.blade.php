@@ -11,8 +11,12 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li> <a class="" href="javascript:void(0)" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard</span></a>
+                <li> <a class="" href="{{route('dashboard')}}" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard</span></a>
                 </li>
+
+                <li><a href="{{route('companies.index')}}">Company <i class="icon-calender"></i></a></li>
+
+                <li><a href="{{route('employees.index')}}">Employee <i class="ti-user"></i></a></li>
 
                 <li><a href="{{route('users.index')}}">User <i class="ti-user"></i></a></li>
 

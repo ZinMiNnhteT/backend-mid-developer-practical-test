@@ -22,7 +22,7 @@
 
 <div class="card p-3">
     <div class="card-body">
-        <form action="{{ url('admin/users') }}" method="POST">
+        <form action="{{ route('users.store') }}" method="POST">
             @csrf
 
             <div class="mb-3">

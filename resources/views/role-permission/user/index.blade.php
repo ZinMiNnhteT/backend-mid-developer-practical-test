@@ -72,11 +72,11 @@
                     </td>
                     <td>
                         @can('update user')
-                        <a href="{{ url('admin/users/'.$user->id.'/edit') }}" class="btn btn-success">Edit</a>
+                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-success">Edit</a>
                         @endcan
 
                         @can('delete user')
-                        <a href="{{ url('admin/users/'.$user->id.'/delete') }}" class="btn btn-danger mx-2">Delete</a>
+                        <a href="{{ route('users.delete', $user->id) }}" class="btn btn-danger mx-2">Delete</a>
                         @endcan
                     </td>
                 </tr>

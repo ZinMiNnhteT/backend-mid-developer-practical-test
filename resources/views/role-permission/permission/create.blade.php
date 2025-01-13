@@ -23,7 +23,7 @@
 
 <div class="card p-3">
     <div class="card-body">
-        <form action="{{ url('admin/permissions') }}" method="POST">
+        <form action="{{ route('permissions.store') }}" method="POST">
             @csrf
 
             <div class="mb-3">
