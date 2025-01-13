@@ -92,6 +92,9 @@ Follow the steps below to set up the project on your local environment:
 ---
 
 ## Storage Link
+```bash
+php atisan storage:link
+```
 **Next, create two folders inside the storage/app/public/ directory for logos and profiles**:
 ```bash
 mkdir storage/app/public/logos
